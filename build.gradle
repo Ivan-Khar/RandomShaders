@@ -7,14 +7,14 @@ buildscript {
 
     dependencies {
         classpath "com.github.asbyth:ForgeGradle:6f53277"
-        classpath 'com.github.xcfrg:MixinGradle:0.6-SNAPSHOT'
+        //classpath 'com.github.xcfrg:MixinGradle:0.6-SNAPSHOT'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'org.spongepowered.mixin'
+//apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 version = "1.0"
@@ -44,6 +44,7 @@ repositories {
 }
 
 dependencies {
+    /*
     include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         exclude module: "guava"
         exclude module: "commons-io"
@@ -51,6 +52,7 @@ dependencies {
         exclude module: "launchwrapper"
     }
     annotationProcessor "org.spongepowered:mixin:0.7.11-SNAPSHOT"
+    */
 }
 
 reobf {
@@ -58,10 +60,11 @@ reobf {
         classpath = sourceSets.main.compileClasspath
     }
 }
-
+/*
 mixin {
     add sourceSets.main, "mixins.${modid}.refmap.json"
 }
+*/
 
 
 shadowJar {
@@ -71,6 +74,7 @@ shadowJar {
 }
 
 jar {
+    /*
     manifest.attributes(
             "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
             "MixinConfigs": "mixins.${modid}.json",
@@ -79,6 +83,7 @@ jar {
     )
 
     enabled = false
+     */
 }
 
 tasks.reobfJar.dependsOn(tasks.shadowJar)

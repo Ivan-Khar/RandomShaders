@@ -1,1 +1,4 @@
-key.aqupd.changehands=Change main hand
+key.aqupd.snapforward=Snap Forward
+key.aqupd.snapbackwards=Snap Backwards
+
+key.aqupd.categories.snaplook=Snap Look
