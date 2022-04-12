@@ -1,0 +1,10 @@
+{
+  "package": "com.aqupd.snaplook.mixins",
+  "refmap": "mixins.snaplook.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "MixinItemRenderer",
+    "MixinRenderFish"
+  ]
+}

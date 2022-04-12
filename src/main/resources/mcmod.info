@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "snaplook",
+    "name": "Snap Look",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/AquUpd",
+    "updateUrl": "",
+    "authorList": [
+      "Aqua_tic(AqUpd)"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
