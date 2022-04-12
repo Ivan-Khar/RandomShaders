@@ -9,7 +9,6 @@ public class Registrations {
 	public static KeyBinding[] keyBindings;
 
 	public static void init() {
-
 		keyBindings = new KeyBinding[2];
 		keyBindings[0] = new KeyBinding("key.aqupd.snapforward", Keyboard.KEY_F, "key.aqupd.categories.snaplook");
 		keyBindings[1] = new KeyBinding("key.aqupd.snapbackwards", Keyboard.KEY_G, "key.aqupd.categories.snaplook");

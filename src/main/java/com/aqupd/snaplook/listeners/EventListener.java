@@ -1,12 +1,12 @@
 package com.aqupd.snaplook.listeners;
 
+import static com.aqupd.snaplook.SnapLook.snapLook;
+
 import com.aqupd.snaplook.setup.Registrations;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import static com.aqupd.snaplook.SnapLook.snapLook;
 
 public class EventListener {
 

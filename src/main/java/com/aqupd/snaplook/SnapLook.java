@@ -37,21 +37,19 @@ public class SnapLook {
 		MinecraftForge.EVENT_BUS.register(eventListener);
 	}
 
-	public static void snapLook(){
+	public static void snapLook() {
 		Minecraft mc = Minecraft.getMinecraft();
-		if(!toggle && (Registrations.keyBindings[0].isKeyDown())) {
+		if (!toggle && (Registrations.keyBindings[0].isKeyDown())) {
 			mc.gameSettings.thirdPersonView = 2;
-			mc.entityRenderer.loadEntityShader((Entity)null);
+			mc.entityRenderer.loadEntityShader((Entity) null);
 			mc.renderGlobal.setDisplayListEntitiesDirty();
 			toggle = true;
-		}
-		else if(!toggle && (Registrations.keyBindings[1].isKeyDown())) {
+		} else if (!toggle && (Registrations.keyBindings[1].isKeyDown())) {
 			mc.gameSettings.thirdPersonView = 1;
-			mc.entityRenderer.loadEntityShader((Entity)null);
+			mc.entityRenderer.loadEntityShader((Entity) null);
 			mc.renderGlobal.setDisplayListEntitiesDirty();
 			toggle = true;
-		}
-		else if(toggle && !(Registrations.keyBindings[0].isKeyDown()) && !(Registrations.keyBindings[1].isKeyDown())) {
+		} else if (toggle && !(Registrations.keyBindings[0].isKeyDown()) && !(Registrations.keyBindings[1].isKeyDown())) {
 			mc.gameSettings.thirdPersonView = 0;
 			mc.entityRenderer.loadEntityShader(mc.getRenderViewEntity());
 			mc.renderGlobal.setDisplayListEntitiesDirty();
