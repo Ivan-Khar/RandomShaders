@@ -1,7 +1,10 @@
 package com.aqupd.randomshaders;
 
+import static com.aqupd.randomshaders.util.Configuration.*;
+
 import com.aqupd.randomshaders.listeners.EventListener;
 import com.aqupd.randomshaders.setup.Registrations;
+import java.io.IOException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -10,10 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
-
-import static com.aqupd.randomshaders.util.Configuration.*;
 
 @Mod(modid = RandomShaders.MOD_ID, name = RandomShaders.MOD_NAME, version = RandomShaders.VERSION, clientSideOnly = true)
 public class RandomShaders {
@@ -46,12 +45,9 @@ public class RandomShaders {
 
 	public static void resetShader() {
 		Minecraft mc = Minecraft.getMinecraft();
-		if (mc.gameSettings.thirdPersonView == 0)
-		{
+		if (mc.gameSettings.thirdPersonView == 0) {
 			mc.entityRenderer.loadEntityShader(mc.getRenderViewEntity());
-		}
-		else if (mc.gameSettings.thirdPersonView >= 1)
-		{
+		} else if (mc.gameSettings.thirdPersonView >= 1) {
 			mc.entityRenderer.loadEntityShader(null);
 		}
 	}
