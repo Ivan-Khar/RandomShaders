@@ -1,4 +1,4 @@
-key.aqupd.snapforward=Snap Forward
-key.aqupd.snapbackwards=Snap Backwards
+key.aqupd.randomshader=Change shader
+key.aqupd.resetshader=Reset shader
 
-key.aqupd.categories.snaplook=Snap Look
+key.aqupd.categories.randomshaders=Random Shaders
