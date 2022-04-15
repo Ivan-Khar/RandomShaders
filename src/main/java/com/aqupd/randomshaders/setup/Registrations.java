@@ -11,7 +11,7 @@ public class Registrations {
 	public static void init() {
 		keyBindings = new KeyBinding[2];
 		keyBindings[0] = new KeyBinding("key.aqupd.randomshader", Keyboard.KEY_N, "key.aqupd.categories.randomshaders");
-		keyBindings[1] = new KeyBinding("key.aqupd.resetshader", Keyboard.KEY_N, "key.aqupd.categories.randomshaders");
+		keyBindings[1] = new KeyBinding("key.aqupd.resetshader", Keyboard.KEY_M, "key.aqupd.categories.randomshaders");
 
 		for (KeyBinding keyBinding : keyBindings) {
 			ClientRegistry.registerKeyBinding(keyBinding);
