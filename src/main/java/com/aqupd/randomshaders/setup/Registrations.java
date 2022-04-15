@@ -1,4 +1,4 @@
-package com.aqupd.snaplook.setup;
+package com.aqupd.randomshaders.setup;
 
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -10,8 +10,8 @@ public class Registrations {
 
 	public static void init() {
 		keyBindings = new KeyBinding[2];
-		keyBindings[0] = new KeyBinding("key.aqupd.snapforward", Keyboard.KEY_F, "key.aqupd.categories.snaplook");
-		keyBindings[1] = new KeyBinding("key.aqupd.snapbackwards", Keyboard.KEY_G, "key.aqupd.categories.snaplook");
+		keyBindings[0] = new KeyBinding("key.aqupd.randomshader", Keyboard.KEY_N, "key.aqupd.categories.randomshaders");
+		keyBindings[1] = new KeyBinding("key.aqupd.resetshader", Keyboard.KEY_N, "key.aqupd.categories.randomshaders");
 
 		for (KeyBinding keyBinding : keyBindings) {
 			ClientRegistry.registerKeyBinding(keyBinding);

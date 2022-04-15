@@ -1,7 +1,7 @@
 [
   {
-    "modid": "snaplook",
-    "name": "Snap Look",
+    "modid": "randomshaders",
+    "name": "Random Shaders",
     "description": "",
     "version": "${version}",
     "mcversion": "${mcversion}",

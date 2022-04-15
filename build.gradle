@@ -19,8 +19,8 @@ apply plugin: 'com.github.johnrengelman.shadow'
 
 version = "1.0"
 group = "com.aqupd"
-archivesBaseName = "snaplook"
-String modid = "snaplook"
+archivesBaseName = "randomshaders"
+String modid = "randomshaders"
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 compileJava.options.encoding = 'UTF-8'
