@@ -25,7 +25,7 @@ public class RandomShaders {
 	public static final String logprefix = "[AqUpd's " + MOD_NAME + "] ";
 
 	private final EventListener eventListener;
-	private final static Minecraft mc = Minecraft.getMinecraft();
+	private static final Minecraft mc = Minecraft.getMinecraft();
 
 	public RandomShaders() throws IOException {
 		Registrations.init();
@@ -43,8 +43,8 @@ public class RandomShaders {
 	public static void randomShader() {
 		int i = (int) (Math.random() * shaders.size());
 		mc.entityRenderer.loadShader(new ResourceLocation(shaders.get(i)));
-		if(msgchat) mc.ingameGUI.getChatGUI().printChatMessage(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"));
-		if(msgaction) mc.ingameGUI.setRecordPlaying(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"), false);
+		if (msgchat) mc.ingameGUI.getChatGUI().printChatMessage(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"));
+		if (msgaction) mc.ingameGUI.setRecordPlaying(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"), false);
 	}
 
 	public static void resetShader() {
