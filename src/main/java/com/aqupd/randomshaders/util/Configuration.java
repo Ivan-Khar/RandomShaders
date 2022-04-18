@@ -1,15 +1,16 @@
 package com.aqupd.randomshaders.util;
 
-import static com.aqupd.randomshaders.RandomShaders.LOGGER;
-import static com.aqupd.randomshaders.RandomShaders.logprefix;
-
 import com.google.gson.Gson;
+
 import java.io.*;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
+import static com.aqupd.randomshaders.RandomShaders.LOGGER;
+import static com.aqupd.randomshaders.RandomShaders.logprefix;
 
 public class Configuration {
 
@@ -28,11 +29,9 @@ public class Configuration {
 		}
 	};
 
-	public static List<String> shaders = gson.fromJson(
-		"[\"shaders/post/antialias.json\",\"shaders/post/art.json\",\"shaders/post/bits.json\",\"shaders/post/blobs.json\",\"shaders/post/blobs2.json\",\"shaders/post/blur.json\",\"shaders/post/bumpy.json\",\"shaders/post/color_convolve.json\",\"shaders/post/creeper.json\",\"shaders/post/deconverge.json\",\"shaders/post/desaturate.json\",\"shaders/post/entity_outline.json\",\"shaders/post/flip.json\",\"shaders/post/fxaa.json\",\"shaders/post/green.json\",\"shaders/post/invert.json\",\"shaders/post/notch.json\",\"shaders/post/ntsc.json\",\"shaders/post/outline.json\",\"shaders/post/pencil.json\",\"shaders/post/phosphor.json\",\"shaders/post/scan_pincushion.json\",\"shaders/post/sobel.json\",\"shaders/post/spider.json\",\"shaders/post/wobble.json\"]",
-		typeListString
-	);
-
+	public static List<String> shaders = gson.fromJson("[\"shaders/post/antialias.json\",\"shaders/post/art.json\",\"shaders/post/bits.json\",\"shaders/post/blobs.json\",\"shaders/post/blobs2.json\",\"shaders/post/blur.json\",\"shaders/post/bumpy.json\",\"shaders/post/color_convolve.json\",\"shaders/post/creeper.json\",\"shaders/post/deconverge.json\",\"shaders/post/desaturate.json\",\"shaders/post/entity_outline.json\",\"shaders/post/flip.json\",\"shaders/post/fxaa.json\",\"shaders/post/green.json\",\"shaders/post/invert.json\",\"shaders/post/notch.json\",\"shaders/post/ntsc.json\",\"shaders/post/outline.json\",\"shaders/post/pencil.json\",\"shaders/post/phosphor.json\",\"shaders/post/scan_pincushion.json\",\"shaders/post/sobel.json\",\"shaders/post/spider.json\",\"shaders/post/wobble.json\"]", typeListString);
+	public static boolean msgchat = false;
+	public static boolean msgaction = true;
 	private static final File configFile = new File("./config/AqMods/RandomShaders.properties");
 
 	public static void loadOptions() throws IOException {
@@ -44,6 +43,8 @@ public class Configuration {
 			String[] astring = s.split(":");
 
 			if (astring[0].equals("Shaders")) shaders = gson.fromJson(s.substring(s.indexOf(58) + 1), typeListString);
+			if (astring[0].equals("MessageInChat")) msgchat = Boolean.parseBoolean(astring[1]);
+			if (astring[0].equals("MessageInActionbar")) msgaction = Boolean.parseBoolean(astring[1]);
 		}
 	}
 
@@ -55,6 +56,8 @@ public class Configuration {
 			if (configFile.exists()) {
 				PrintWriter printwriter = new PrintWriter(new FileWriter(configFile));
 				printwriter.println("Shaders:" + gson.toJson(Configuration.shaders));
+				printwriter.println("MessageInChat:" + msgchat);
+				printwriter.println("MessageInActionbar:" + msgaction);
 				printwriter.close();
 			}
 		} catch (Exception exception) {

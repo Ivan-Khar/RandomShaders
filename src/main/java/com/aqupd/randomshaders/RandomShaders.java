@@ -6,6 +6,7 @@ import com.aqupd.randomshaders.listeners.EventListener;
 import com.aqupd.randomshaders.setup.Registrations;
 import java.io.IOException;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -19,15 +20,17 @@ public class RandomShaders {
 
 	public static final String MOD_ID = "randomshaders";
 	public static final String MOD_NAME = "Random Shaders";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.1";
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String logprefix = "[AqUpd's " + MOD_NAME + "] ";
 
 	private final EventListener eventListener;
+	private final static Minecraft mc = Minecraft.getMinecraft();
 
 	public RandomShaders() throws IOException {
 		Registrations.init();
 		loadOptions();
+		saveOptions();
 		this.eventListener = new EventListener();
 		FMLCommonHandler.instance().bus().register(this);
 	}
@@ -38,13 +41,13 @@ public class RandomShaders {
 	}
 
 	public static void randomShader() {
-		Minecraft mc = Minecraft.getMinecraft();
 		int i = (int) (Math.random() * shaders.size());
 		mc.entityRenderer.loadShader(new ResourceLocation(shaders.get(i)));
+		if(msgchat) mc.ingameGUI.getChatGUI().printChatMessage(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"));
+		if(msgaction) mc.ingameGUI.setRecordPlaying(new ChatComponentText("§r§f§lShader \"" + shaders.get(i) + "\" applied"), false);
 	}
 
 	public static void resetShader() {
-		Minecraft mc = Minecraft.getMinecraft();
 		if (mc.gameSettings.thirdPersonView == 0) {
 			mc.entityRenderer.loadEntityShader(mc.getRenderViewEntity());
 		} else if (mc.gameSettings.thirdPersonView >= 1) {
